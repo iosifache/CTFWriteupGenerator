@@ -10,7 +10,7 @@
 http://simpleauth.chal.ctf.westerns.tokyo
 
 ## Summary
-Exploit **CVE-2007-3205** vulnerability in *PHP*, that consist in arbitrary variable overwrite with function `parse_str()`.
+Exploit **CVE-2007-3205** vulnerability in *PHP*, that consist in arbitrary variable overwrite with function `parse_str()`
 
 ## Flag
 ```
