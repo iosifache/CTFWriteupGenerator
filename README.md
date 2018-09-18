@@ -45,7 +45,7 @@ To create a custom score badge, replace X with score in this Markdown line:
 ```
 
 ## Solves
-![100 solves](https://img.shields.io/badge/solves-1000-brightgreen.svg)
+![100 solves](https://img.shields.io/badge/solves-1000-brightgreen.svg)  
 To create a custom solves badge, replace X with solves in this Markdown line: 
 ```
 ![X solves](https://img.shields.io/badge/solves-X-brightgreen.svg)
