@@ -1,6 +1,6 @@
 # Tokyo Westerns CTF 4th 2018: vimshell
 
-![date](https://img.shields.io/badge/date-01.01.1970-brightgreen.svg)  
+![date](https://img.shields.io/badge/date-01.09.2018-brightgreen.svg)  
 ![solved in time of CTF](https://img.shields.io/badge/solved-in%20time%20of%20CTF-brightgreen.svg)  
 ![misc category](https://img.shields.io/badge/category-misc-lightgrey.svg)
 ![score](https://img.shields.io/badge/score-126-blue.svg)
@@ -10,7 +10,7 @@
 Can you escape from [jail](http://vimshell.chal.ctf.westerns.tokyo/)?
 
 ## Summary
-Go to flag file, **./flag**, with **(CTRL+W, F)** shortcut in vim connected app
+Go to flag file, **./flag**, with **(CTRL+W, F)** shortcut in *vim* connected app
 
 ## Flag
 ```
@@ -39,7 +39,7 @@ index 41c762332..0011afb77 100644
 "/vimshell.patch" [readonly] 31 lines, 1124 characters
 ```
 
-We try to use *ZZ* shortcut, but it doen’t close vim, but the connection with server. Another shortcut that can be used is **(CTRL+W, F)** to open a file in split-screen mode. We delete the *CTRL+W* shortcut from browser close tab shortcut’s list(in *Vivaldi*, *Setting->Keyboard->Tabs*).  
+We try to use *ZZ* shortcut, but it doesn’t close vim, but the connection with server. Another shortcut that can be used is **(CTRL+W, F)** to open a file in split-screen mode. We delete the *CTRL+W* shortcut from browser close tab shortcut’s list(in *Vivaldi*, *Setting->Keyboard->Tabs*).  
 After that, we return to application and press **i** key multiple time. Passing some swap errors, we enter to insert mode and type `./flag`. We exit this mode with *ESC* key and test the *(CTRL+W, F)*, which show the flag file.
 
 ## Another solutions
