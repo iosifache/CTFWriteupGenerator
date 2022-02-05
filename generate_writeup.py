@@ -153,7 +153,10 @@ ALTERNATIVE_SOLUTIONS_PART = """
 ## Alternative Solutions
 
 Lorem ipsum"""
-FILENAME_FORMAT = "writeups/{}-{}.md"
+DIRNAME_FORMAT = "writeups/{}-{}"
+README_FILENAME = "README.md"
+ATTACHED_FILES_DIRNAME = "attached_files"
+SOLVE_FILES_DIRNAME = "solve"
 
 
 class CustomDict(dict):
@@ -226,19 +229,26 @@ def main():
     if answers.alternative_solutions:
         content += "\n" + ALTERNATIVE_SOLUTIONS_PART
 
-    # Generate the filename
+    # Generate the dirname and the README filename
     formatted_date = answers.contest_date.replace(".", "")
     formatted_challenge_name = "".join(
         filter(str.isalnum, answers.challenge_name))
-    filename = FILENAME_FORMAT.format(formatted_date, formatted_challenge_name)
+    dirname = DIRNAME_FORMAT.format(formatted_date, formatted_challenge_name)
+    attached_files_dirname = os.path.join(dirname, ATTACHED_FILES_DIRNAME)
+    solve_files_dirname = os.path.join(dirname, SOLVE_FILES_DIRNAME)
+    readme_filename = os.path.join(dirname, README_FILENAME)
 
-    # Write to the file
-    with open(filename, "w") as file:
-        file.write(content)
+    # Make the directory with a README
+    os.mkdir(dirname)
+    os.mkdir(solve_files_dirname)
+    if answers.files_attached:
+        os.mkdir(attached_files_dirname)
+    with open(readme_filename, "w") as readme_file:
+        readme_file.write(content)
 
     # Print a success message
     print(BashColor.GREEN + BashColor.BOLD + '+' + BashColor.END +
-          " The write-up file " + BashColor.BLUE + BashColor.BOLD + filename +
+          " The write-up folder " + BashColor.BLUE + BashColor.BOLD + dirname +
           BashColor.END + " was generated!")
 
 

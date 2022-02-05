@@ -1,0 +1,3 @@
+# Ignore all the local writeups, but keep an empty file tho
+writeups/*
+!writeups/.gitkeep
